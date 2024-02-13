@@ -1,7 +1,7 @@
+import mail.MailItem;
 /**
  * The ScenarioMailItem class is used to test the functionality of the MailItem class.
  */
-import mail.MailItem;
 public class ScenarioMailItem {
     /** The total number of tests executed. */
     static int nbTests = 0;
