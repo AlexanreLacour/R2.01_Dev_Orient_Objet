@@ -6,6 +6,8 @@ public class TestMailItem {
     static int nbTests = 0, nbOK = 0;
     public static void main(String[] args) {
         testMailItem();
+        testGetter();
+        testPrint();
 
         System.out.println("Résultat final (pour les test auto): " + nbOK + " / " + nbTests + " tests passés.");
     }
@@ -58,12 +60,70 @@ public class TestMailItem {
         nbTests++;
     }
 
+
+
+
+
     public static void testGetter(){
-        System.out.println("### Test des Getter : ");
+
+        String from = "Toto";
+        String to = "Tata";
+        String message = "Hello World";
+
+        MailItem test = new MailItem(from, to, message);
+
+        System.out.println("");
+        System.out.println("### Test des Getter (test visuel) : ");
+        System.out.println("");
+        System.out.println("\tCas Normaux :");
+        System.out.println("Expediteur attendu : " + from);
+        System.out.println("\tObtenu : " + test.getFrom());
+        System.out.println("Message attendu : " + message);
+        System.out.println("\tObtenu : " + test.getMessage());
+        System.out.println("Receveur attendu : " + to);
+        System.out.println("\tObtenu : " + test.getTo());
+        System.out.println("");
+
+        from = "";
+        to = "";
+        message = "";
+
+        test = new MailItem(from, to, message);
+        
+        System.out.println("\tCas Limite : ");
+        System.out.println("Expediteur attendu : " + from);
+        System.out.println("\tObtenu : " + test.getFrom());
+        System.out.println("Message attendu : " + message);
+        System.out.println("\tObtenu : " + test.getMessage());
+        System.out.println("Receveur attendu : " + to);
+        System.out.println("\tObtenu : " + test.getTo());
+        System.out.println("");
     }
 
     public static void testPrint(){
+        String from = "Toto";
+        String to = "Tata";
+        String message = "Hello World";
 
+        MailItem test = new MailItem(from, to, message);
+
+        System.out.println("### Test de Print (test visuel) : ");
+        System.out.println("");
+        System.out.println("\tCas Normaux");
+        test.print();
+        System.out.println("");
+
+        from = "";
+        to = "";
+        message = "";
+
+        test = new MailItem(from, to, message);
+
+        System.out.println("\tCas limite");
+        test.print();
+        System.out.println("");
+        
+        
     }
 }
 //
