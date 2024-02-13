@@ -2,11 +2,15 @@ import mail.MailItem;
 import mail.MailServer;
 
 /**
- * ScenarioMailServer
+ * MailScenario
  */
-public class ScenarioMailServer {
+public class MailScenario {
     static int nbTests = 0, nbOK = 0;
 
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         testHowManyMailItems();
         testGetNextMailItems();
@@ -15,7 +19,10 @@ public class ScenarioMailServer {
         System.out.println("Résultat final (pour les test auto): " + nbOK + " / " + nbTests + " tests passés.");
     }
 
-    private static void testHowManyMailItems() {
+    /**
+     * 
+     */
+    public static void testHowManyMailItems() {
 
         
         System.err.println("###Test de How Many Mail Items : ");
@@ -37,7 +44,14 @@ public class ScenarioMailServer {
         System.out.println("");
     }
 
-    private static void casTestHowManyMailItems(MailServer server, int resultat, String who){
+    
+    /**
+     * 
+     * @param server
+     * @param resultat
+     * @param who
+     */
+    public static void casTestHowManyMailItems(MailServer server, int resultat, String who){
         if(server.howManyMailItems(who) == resultat){
             System.out.println("\tOK");
             nbOK++;
@@ -47,7 +61,10 @@ public class ScenarioMailServer {
         nbTests++;
     }
 
-    private static void testGetNextMailItems() {
+    /**
+     * 
+     */
+    public static void testGetNextMailItems() {
         System.err.println("###Test de Get Next Mail Items : ");
         System.out.println("");
         System.out.println("\tCas Normaux : ");
@@ -72,6 +89,12 @@ public class ScenarioMailServer {
         System.out.println("");
     }
 
+    /**
+     * 
+     * @param server
+     * @param resultat
+     * @param who
+     */
     public static void casTestGetNextMailItems(MailServer server, MailItem resultat, String who){
         if(server.getNextMailItem(who) == resultat){
             System.out.println("\tOK");
@@ -82,7 +105,10 @@ public class ScenarioMailServer {
         nbTests++;
     }
 
-    private static void testPost() {
+    /**
+     * 
+     */
+    public static void testPost() {
         System.err.println("###Test de Post : ");
         System.out.println("");
         System.out.println("\tCas Normaux : ");
@@ -108,6 +134,12 @@ public class ScenarioMailServer {
         System.out.println("");
     }
 
+    /**
+     * 
+     * @param server
+     * @param resultat
+     * @param who
+     */
     public static void casTestPost(MailServer server, MailItem resultat, String who){
         if(server.getNextMailItem(who) == resultat){
             System.out.println("\tOK");
