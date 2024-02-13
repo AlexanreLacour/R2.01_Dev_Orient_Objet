@@ -2,7 +2,7 @@
  * TestMailItem
  */
 import mail.MailItem;
-public class TestMailItem {
+public class ScenarioMailItem {
     static int nbTests = 0, nbOK = 0;
     public static void main(String[] args) {
         testMailItem();
