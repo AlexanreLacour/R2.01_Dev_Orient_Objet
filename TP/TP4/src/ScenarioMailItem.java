@@ -1,9 +1,19 @@
 /**
- * TestMailItem
+ * The ScenarioMailItem class is used to test the functionality of the MailItem class.
  */
 import mail.MailItem;
 public class ScenarioMailItem {
-    static int nbTests = 0, nbOK = 0;
+    /** The total number of tests executed. */
+    static int nbTests = 0;
+
+    /** The number of tests passed. */
+    static int nbOK = 0;
+
+    /**
+     * The main method to run the test scenarios.
+     * 
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         testMailItem();
         testGetter();
@@ -12,6 +22,9 @@ public class ScenarioMailItem {
         System.out.println("Résultat final (pour les test auto): " + nbOK + " / " + nbTests + " tests passés.");
     }
 
+    /**
+     * Test method for MailItem constructor.
+     */
     public static void testMailItem(){
 
         System.out.println("   ###TestMailItem : ");
@@ -43,6 +56,12 @@ public class ScenarioMailItem {
 
     }
 
+    /**
+     * Test method for MailItem constructor.
+     * 
+     * @param test the mail item instance to test
+     * @param result the expected result
+     */
     public static void testCasMailItem(MailItem test, boolean result){
         Boolean verif = true;
         if((!test.getFrom().equals(""))&&(!test.getMessage().equals(""))&&(!test.getTo().equals(""))){
@@ -60,10 +79,9 @@ public class ScenarioMailItem {
         nbTests++;
     }
 
-
-
-
-
+    /**
+     * Test method for MailItem getters.
+     */
     public static void testGetter(){
 
         String from = "Toto";
@@ -100,6 +118,9 @@ public class ScenarioMailItem {
         System.out.println("");
     }
 
+    /**
+     * Test method for MailItem print method.
+     */
     public static void testPrint(){
         String from = "Toto";
         String to = "Tata";
