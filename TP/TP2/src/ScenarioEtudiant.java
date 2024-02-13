@@ -190,6 +190,7 @@ public class ScenarioEtudiant {
         System.out.println(" ");
     }
 
+    @SuppressWarnings("null")
     public static void testMoyenneMatiere() {
 
         System.out.println("## Test de Moyenne Matiere");

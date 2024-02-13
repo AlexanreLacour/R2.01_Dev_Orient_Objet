@@ -150,6 +150,7 @@ public class Rationnel {
      * @param r Another Rationnel object to compare.
      * @return True if they are equal, false otherwise.
      */
+    @SuppressWarnings("null")
     public Boolean egale(Rationnel r){
         boolean res;
         int rDenominateur, rNumerateur;
