@@ -144,6 +144,17 @@ public class ScenarioMailItem {
         test.print();
         System.out.println("");
         
+
+        System.out.println("\tCas Erreur");
+
+        from = null;
+        to = null;
+        message = null;
+
+        test = new MailItem(from, to, message);
+        
+        test.print();
+        System.out.println("");
         
     }
 }
