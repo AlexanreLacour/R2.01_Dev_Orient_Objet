@@ -1,5 +1,6 @@
 package mail;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -11,6 +12,13 @@ public class MailServer {
 
     /** The list of mail items stored in this mail server. */
     private ArrayList<MailItem> items;
+
+    /** The list of spams stored in this mail server. */
+    private ArrayList<MailItem> spams;
+
+    /** The list of spammers stored in this mail server. */
+    private ArrayList<String> spammers;
+
 
     /**
      * Constructs a new MailServer object.
