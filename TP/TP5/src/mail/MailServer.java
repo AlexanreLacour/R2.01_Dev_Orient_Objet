@@ -12,11 +12,24 @@ public class MailServer {
     /** The list of mail items stored in this mail server. */
     private ArrayList<MailItem> items;
 
+    /** The list of filters stored in this mail server. */
+    private AntiSpam AntiSpam;
+
     /**
-     * Constructs a new MailServer object.
+     * This method MailServer() is a constructor which allows you to create a list (ArrayList) of items (MailItem object)
      */
-    public MailServer(){
+    public MailServer(ArrayList<String> filters){
         this.items = new ArrayList<MailItem>();
+        if(filters != null){
+            this.AntiSpam = new AntiSpam(filters);        
+        }else{
+            System.err.println("Le paramatre n'est pas valide.");
+            this.AntiSpam = new AntiSpam(new ArrayList<String>());
+        }
+    }
+
+    public static void main(String[] args) {
+        
     }
 
     /**
@@ -69,15 +82,20 @@ public class MailServer {
     }
 
     /**
-     * Posts a mail item to this mail server.
-     * 
-     * @param item the mail item to be posted
+     * This method adds the MailItem type object passed as a parameter to the list of items
+     * @param item the MailItem type object
      */
     public void post(MailItem item){
-        if(item != null){
-            this.items.add(item);
+        if (item != null){
+            if (this.AntiSpam.scan(item.getMessage())){
+                String message_spam = "[SPAM]" + item.getMessage(); 
+                MailItem it = new MailItem(item.getFrom(), item.getTo(), message_spam);
+                this.items.add(it);
+            }else{
+                this.items.add(item); 
+            } 
         }else{
-            System.err.println("Merci de saisir des parametres valides!");
+            System.out.println("Le parametre n'est pas valide.");
         }
     }
 }
