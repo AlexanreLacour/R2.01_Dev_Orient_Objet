@@ -2,20 +2,14 @@ package mail;
 import java.util.Iterator; 
 import java.util.ArrayList;
 
-
 /**
- * The AntiSpam class represents a spam filter that scans messages for spam keywords.
- * It stores a list of filters and provides methods to scan messages, add new filters, and display the list of filters.
+ * 
  */
 public class AntiSpam{
     private ArrayList<String> filters; 
 
-    
     /**
-     * Constructs an AntiSpam object with the specified list of filters.
      * 
-     * @param filters the list of filters to be used for spam detection
-     * @throws IllegalArgumentException if the filters parameter is null
      */
     public AntiSpam(ArrayList<String> filters){
         if((filters != null)){
@@ -29,11 +23,12 @@ public class AntiSpam{
         }
     }
 
+    public static void main(String[] args) {
+
+    }
+
     /**
-     * Scans the specified message for spam keywords.
      * 
-     * @param message the message to be scanned
-     * @return true if the message contains any of the spam keywords, false otherwise
      */
     public boolean scan(String message){
         boolean result = false; 
@@ -51,9 +46,7 @@ public class AntiSpam{
     }
 
     /**
-     * Adds a new filter to the list of filters.
      * 
-     * @param f the filter to be added
      */
     public void add(String f){
         if((f != null) && (!f.equals(""))){
@@ -65,9 +58,7 @@ public class AntiSpam{
     }
 
     /**
-     * Displays the list of filters.
      * 
-     * @return the list of filters
      */
     public String toString(){
         String result; 

@@ -10,10 +10,10 @@ public class MailClient {
     private MailServer server; 
 
     /**
-     * Constructs a mail client with a given server and user.
-     * 
-     * @param server the mail server
-     * @param user the user
+     * This method is a constructor, which initialize attributes with parameters
+     * @param server
+     * @param user
+     * @return
      */
     public MailClient (MailServer server, String user){
         if((server != null) && (user != null)){
@@ -24,6 +24,10 @@ public class MailClient {
             this.user = ""; 
             this.server = new MailServer(new ArrayList<String>()); 
         }
+    }
+
+    public static void main(String[] args) {
+        
     }
 
     /**

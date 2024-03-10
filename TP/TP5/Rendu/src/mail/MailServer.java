@@ -15,14 +15,8 @@ public class MailServer {
     /** The list of filters stored in this mail server. */
     private AntiSpam AntiSpam;
 
-
     /**
-     * Represents a mail server that stores and filters mail items.
-     * 
-     * The MailServer class provides functionality to store mail items and apply spam filters to incoming mail.
-     * It uses an AntiSpam object to filter mail items based on a list of filters.
-     * 
-     * @param filters The list of filters to be used by the AntiSpam object. If null, a default empty list will be used.
+     * This method MailServer() is a constructor which allows you to create a list (ArrayList) of items (MailItem object)
      */
     public MailServer(ArrayList<String> filters){
         this.items = new ArrayList<MailItem>();
@@ -32,6 +26,10 @@ public class MailServer {
             System.err.println("Le paramatre n'est pas valide.");
             this.AntiSpam = new AntiSpam(new ArrayList<String>());
         }
+    }
+
+    public static void main(String[] args) {
+        
     }
 
     /**

@@ -21,11 +21,11 @@ public class MailScenario {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-        testHowManyMailItems();
-        testGetNextMailItems();
-        testPost();
-        testAntiSpam();
-        //testMailClient();
+        //testHowManyMailItems();
+        //testGetNextMailItems();
+        //testPost();
+        //testAntiSpam();
+        testMailClient();
 
         System.out.println("Résultat final (pour les tests automatisés) : " + nbOK + " / " + nbTests + " tests passés.");
     }
