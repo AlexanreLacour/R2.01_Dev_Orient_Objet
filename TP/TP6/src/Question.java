@@ -21,6 +21,13 @@ public class Question {
         }
     }
 
+    public static void main(String[] args) {
+        Question q = new Question("Quelle est la couleur du cheval blanc de Henry IV?", "blanc");
+        q.display();
+        System.out.println("Reponse: " + q.checkAnswer("blanc"));
+        System.out.println("Reponse: " + q.checkAnswer("noir"));
+    }
+
     public String getText() {
         return text;
     }
@@ -43,7 +50,13 @@ public class Question {
     }
 
     public boolean checkAnswer(String response) {
-        return response.equalsIgnoreCase(answer);
+        boolean result = false;
+        if(response!=null){
+            result = response.equalsIgnoreCase(this.answer);
+        }else{
+            System.out.println("Error: response ne peut pas etre null");
+        }
+        return result;
     }
 
     public String getAnswer() {
