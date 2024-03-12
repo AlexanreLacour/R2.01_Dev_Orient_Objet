@@ -2,6 +2,5 @@
  * ChoiceQuestion
  */
 public class ChoiceQuestion {
-
     
 }

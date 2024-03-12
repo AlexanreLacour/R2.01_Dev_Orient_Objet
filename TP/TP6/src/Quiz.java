@@ -2,6 +2,5 @@
  * Quiz
  */
 public class Quiz {
-
     
 }

@@ -2,6 +2,5 @@
  * Question
  */
 public class Question {
-
     
 }
