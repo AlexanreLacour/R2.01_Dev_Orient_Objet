@@ -15,9 +15,14 @@ public class ScenarioQuestion {
     /** The number of tests passed. */
     static int nbOK = 0;
 
+    /**
+     * Main method to test the `Question`, `ChoiceQuestion`, and `Quiz` classes.
+     * 
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
-        //testQuestion();
-        //testChoiceQuestion();
+        testQuestion();
+        testChoiceQuestion();
         testQuiz();
 
         System.out.println("Résultat final : " + nbOK + " / " + nbTests + " tests automatiques passés.");

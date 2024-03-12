@@ -6,11 +6,15 @@ import java.util.ArrayList;
  * ChoiceQuestion
  */
 public class ChoiceQuestion extends Question {
+    /**
+     * The ChoiceQuestion class represents a multiple-choice question.
+     */
     private ArrayList<String> choices;
 
     /**
-     * Represents a multiple-choice question.
-     * Inherits from the Question class.
+     * Constructs a ChoiceQuestion object.
+     *
+     * @param text the text of the question
      */
     public ChoiceQuestion(String text) {
         super(text, ""); /* Chainage explicite */
