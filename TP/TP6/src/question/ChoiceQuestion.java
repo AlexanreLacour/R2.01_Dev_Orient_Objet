@@ -28,7 +28,6 @@ public class ChoiceQuestion extends Question {
             this.choices.add(choice);
             if (correct) {
                 int num = this.choices.size();
-                //num += 1;
                 this.setAnswer(String.valueOf(num));
             }
         }else{
