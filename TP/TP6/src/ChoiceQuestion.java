@@ -1,0 +1,7 @@
+/**
+ * ChoiceQuestion
+ */
+public class ChoiceQuestion {
+
+    
+}

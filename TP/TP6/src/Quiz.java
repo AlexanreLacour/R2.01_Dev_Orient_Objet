@@ -1,0 +1,7 @@
+/**
+ * Quiz
+ */
+public class Quiz {
+
+    
+}
