@@ -1,6 +1,6 @@
 /**
  * ChoiceQuestion
  */
-public class ChoiceQuestion {
-    
+public class ChoiceQuestion extends Question {
+
 }
