@@ -14,11 +14,13 @@ public class ScenarioQuestion {
 
     public static void main(String[] args) {
         //testQuestion();
-        testChoiceQuestion();
-        //testQuiz();
+        //testChoiceQuestion();
+        testQuiz();
 
-        System.out.println("Résultat final : " + nbOK + " / " + nbTests + " tests passés.");
+        System.out.println("Résultat final : " + nbOK + " / " + nbTests + " tests automatiques passés.");
     }
+
+
 
     public static void testQuestion(){
         System.out.println("### Test Question ###");
@@ -99,10 +101,10 @@ public class ScenarioQuestion {
         System.out.println();
 
         Question check1 = new Question("Quelle est la capitale de la France ?", "Paris");
-        testReponsebool(check1.checkAnswer("Paris"), true, false);
+        testReponseBool(check1.checkAnswer("Paris"), true, false);
 
         Question check2 = new Question("Quelle est la capitale de l'Espagne ?", "Madrid");
-        testReponsebool(check2.checkAnswer("Madrid"), true, false);
+        testReponseBool(check2.checkAnswer("Madrid"), true, false);
     }
 
     public static void testReponse(String saisie, String reponse, boolean isErrorExpected){
@@ -120,7 +122,7 @@ public class ScenarioQuestion {
         nbTests++;
     }
 
-    public static void testReponsebool(boolean saisie, boolean reponse, boolean isErrorExpected){
+    public static void testReponseBool(boolean saisie, boolean reponse, boolean isErrorExpected){
         if(isErrorExpected){
             System.out.println("OK");
             nbOK++;
@@ -135,12 +137,130 @@ public class ScenarioQuestion {
         nbTests++;
     }
 
-    public static void testChoiceQuestion(){
-        
+    public static void testReponseInt(int saisie, int reponse, boolean isErrorExpected){
+        if(isErrorExpected){
+            System.out.println("OK");
+            nbOK++;
+        }else{
+            if(saisie == reponse){
+                System.out.println("OK");
+                nbOK++;
+            }else{
+                System.out.println("ERROR");
+            }
+        }
+        nbTests++;
     }
 
+
+
+    public static void testChoiceQuestion(){
+        System.out.println();
+        System.out.println();
+        System.out.println("### Test ChoiceQuestion ###");
+        System.out.println();
+
+        System.out.println();
+        System.out.println("\t- Test addChoice & display & constructeur :");
+        System.out.println();
+
+        ChoiceQuestion question1 = new ChoiceQuestion("Quelle est la capitale de la France?");
+        question1.addChoice("Paris", true);
+        question1.addChoice("London", false);
+        question1.addChoice("Berlin", false);
+
+        question1.display();
+
+        System.out.println();
+
+        ChoiceQuestion question2 = new ChoiceQuestion("Quelle est la plus grande planete du systeme solaire?");
+        question2.addChoice("Mars", false);
+        question2.addChoice("Jupiter", true);
+        question2.addChoice("Saturn", false);
+
+        question2.display();
+
+        System.out.println();
+
+        ChoiceQuestion question3 = new ChoiceQuestion("Qui est l'auteur de 'Pride and Prejudice'?");
+        question3.addChoice("Jane Austen", true);
+        question3.addChoice("Emily Bronte", false);
+        question3.addChoice("Charlotte Bronte", false);
+
+        question3.display();
+
+        System.out.println();
+    }
+
+
+
     public static void testQuiz(){
-        
+        System.out.println();
+        System.out.println();
+        System.out.println("### Test Quiz ###");
+        System.out.println();
+
+        System.out.println();
+        System.out.println("\t- Test add & display & constructeur :");
+        System.out.println();
+
+        Quiz q = new Quiz();
+        q.add(new Question("What is the capital of France?", "Paris"));
+        q.add(new Question("What is the capital of Germany?", "Berlin"));
+        q.add(new Question("What is the capital of Italy?", "Rome"));
+        q.add(new Question("What is the capital of Spain?", "Madrid"));
+        q.add(new Question("What is the capital of Portugal?", "Lisbon"));
+        q.display();
+        System.out.println("Random question: " + q.pickAtRandom().getText());
+
+        System.out.println();
+
+        Quiz q2 = new Quiz();
+        q2.add(new ChoiceQuestion("Quelle est la capitale de la France?"));
+        q2.add(new ChoiceQuestion("Quelle est la plus grande planete du systeme solaire?"));
+        q2.add(new ChoiceQuestion("Qui est l'auteur de 'Pride and Prejudice'?"));
+        q2.display();
+        System.out.println("Random question: " + q2.pickAtRandom().getText());
+
+        System.out.println();
+
+        Quiz q3 = new Quiz();
+        q3.add(new ChoiceQuestion("Quelle est la capitale de la France?"));
+        q3.add(new ChoiceQuestion("Quelle est la plus grande planete du systeme solaire?"));
+        q3.add(new ChoiceQuestion("Qui est l'auteur de 'Pride and Prejudice'?"));
+        q3.display();
+        System.out.println("Random question: " + q3.pickAtRandom().getText());
+
+        System.out.println();
+
+        System.out.println();
+        System.out.println("\t- Test getQuestion & getQNumber :");
+        System.out.println();
+
+        Quiz q4 = new Quiz();
+        q4.add(new Question("What is the capital of France?", "Paris"));
+        q4.add(new Question("What is the capital of Germany?", "Berlin"));
+        q4.add(new Question("What is the capital of Italy?", "Rome"));
+        q4.add(new Question("What is the capital of Spain?", "Madrid"));
+        q4.add(new Question("What is the capital of Portugal?", "Lisbon"));
+        testReponse(q4.getQuestionText(0), "What is the capital of France?", false);
+        testReponse(q4.getQuestionText(1), "What is the capital of Germany?", false);
+        testReponse(q4.getQuestionText(2), "What is the capital of Italy?", false);
+        testReponse(q4.getQuestionText(3), "What is the capital of Spain?", false);
+        testReponse(q4.getQuestionText(4), "What is the capital of Portugal?", false);
+        testReponseInt(q4.getQNumber(), 5, false);
+
+        System.out.println();
+
+        Quiz q5 = new Quiz();
+        q5.add(new ChoiceQuestion("Quelle est la capitale de la France?"));
+        q5.add(new ChoiceQuestion("Quelle est la plus grande planete du systeme solaire?"));
+        q5.add(new ChoiceQuestion("Qui est l'auteur de 'Pride and Prejudice'?"));
+        testReponse(q5.getQuestionText(0), "Quelle est la capitale de la France?", false);
+        testReponse(q5.getQuestionText(1), "Quelle est la plus grande planete du systeme solaire?", false);
+        testReponse(q5.getQuestionText(2), "Qui est l'auteur de 'Pride and Prejudice'?", false);
+        testReponseInt(q5.getQNumber(), 3, false);
+
     }
 
 }
