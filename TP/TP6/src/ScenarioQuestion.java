@@ -1,8 +1,11 @@
 import question.Question;
 import question.Quiz;
 import question.ChoiceQuestion;
+
 /**
- * ScenarioQuestion
+ * The `ScenarioQuestion` class represents a scenario for testing different types of questions and quizzes.
+ * It contains methods to test various question types, such as `Question`, `ChoiceQuestion`, and `Quiz`.
+ * The class also tracks the number of tests executed and the number of tests passed.
  */
 public class ScenarioQuestion {
 
@@ -21,7 +24,14 @@ public class ScenarioQuestion {
     }
 
 
-
+    /**
+     * Tests the `Question` class.
+     * 
+     * The method tests the following methods of the `Question` class:
+     * - The `setText` and `setAnswer` methods
+     * - The `Question` constructor and the `getAnswer` method
+     * - The `checkAnswer` method
+     */
     public static void testQuestion(){
         System.out.println("### Test Question ###");
         System.out.println();
@@ -107,6 +117,12 @@ public class ScenarioQuestion {
         testReponseBool(check2.checkAnswer("Madrid"), true, false);
     }
 
+    /**
+     * Tests the test class.
+     * @param saisie the user input
+     * @param reponse the expected response
+     * @param isErrorExpected true if an error is expected, false otherwise
+     */
     public static void testReponse(String saisie, String reponse, boolean isErrorExpected){
         if(isErrorExpected){
             System.out.println("OK");
@@ -122,6 +138,12 @@ public class ScenarioQuestion {
         nbTests++;
     }
 
+    /**
+     * Tests the test class but for bool.
+     * @param saisie the user input
+     * @param reponse the expected response
+     * @param isErrorExpected true if an error is expected, false otherwise
+     */
     public static void testReponseBool(boolean saisie, boolean reponse, boolean isErrorExpected){
         if(isErrorExpected){
             System.out.println("OK");
@@ -137,6 +159,12 @@ public class ScenarioQuestion {
         nbTests++;
     }
 
+    /**
+     * Tests the test class but for int.
+     * @param saisie the user input
+     * @param reponse the expected response
+     * @param isErrorExpected true if an error is expected, false otherwise
+     */
     public static void testReponseInt(int saisie, int reponse, boolean isErrorExpected){
         if(isErrorExpected){
             System.out.println("OK");
@@ -153,7 +181,9 @@ public class ScenarioQuestion {
     }
 
 
-
+    /**
+     * Tests the `ChoiceQuestion` class.
+     */
     public static void testChoiceQuestion(){
         System.out.println();
         System.out.println();
@@ -193,7 +223,9 @@ public class ScenarioQuestion {
     }
 
 
-
+    /**
+     * Tests the `Quiz` class.
+     */
     public static void testQuiz(){
         System.out.println();
         System.out.println();
