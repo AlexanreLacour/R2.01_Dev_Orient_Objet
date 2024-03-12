@@ -112,14 +112,4 @@ public class Question {
     public void display() {
         System.out.println(text);
     }
-
-    /**
-     * Gets the text of the question.
-     * 
-     * @return the text of the question
-     * @throws UnsupportedOperationException if the method is not implemented
-     */
-    public String getQuestionText() {
-        throw new UnsupportedOperationException("Unimplemented method 'getQuestionText'");
-    }
 }

@@ -17,6 +17,16 @@ public class Quiz {
         this.questionList = list;
     }
 
+    public static void main(String[] args) {
+        Quiz q = new Quiz();
+        q.add(new Question("What is the capital of France?", "Paris"));
+        q.add(new Question("What is the capital of Germany?", "Berlin"));
+        q.add(new Question("What is the capital of Italy?", "Rome"));
+        q.add(new Question("What is the capital of Spain?", "Madrid"));
+        q.add(new Question("What is the capital of Portugal?", "Lisbon"));
+        q.display();
+        System.out.println("Random question: " + q.pickAtRandom().getText());
+    }
 
     public Question pickAtRandom() {
         Random r = new Random();
@@ -25,7 +35,7 @@ public class Quiz {
     }
 
     public String getQuestionText(int index) {
-        return null;
+        return questionList.get(index).getText();
     }
 
     public int getQNumber() {
