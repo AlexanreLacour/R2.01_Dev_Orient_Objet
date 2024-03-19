@@ -7,6 +7,7 @@ public class Executive extends Employee{
 
     public Executive(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
         super(eName, eAddress, ePhone, socSecNumber, rate);
+        this.bonus = 0;
     }
 
     public void awardBonus(double execBonus){

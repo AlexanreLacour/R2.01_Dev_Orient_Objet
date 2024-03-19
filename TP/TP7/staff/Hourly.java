@@ -7,6 +7,7 @@ public class Hourly extends Employee{
 
     public Hourly(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
         super(eName, eAddress, ePhone, socSecNumber, rate);
+        this.hoursWorked = 0;
     }
 
     public void addHours(int moreHours){
