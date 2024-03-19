@@ -1,7 +1,0 @@
-/**
- * StafMember
- */
-public class StafMember {
-
-    
-}
