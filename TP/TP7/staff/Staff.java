@@ -9,6 +9,14 @@ public class Staff {
     }
 
     public void addNewMember(StaffMember member){
-        
+
+    }
+
+    public StaffMember getMember(int index){
+        return null;
+    }
+
+    public void payday(){
+
     }
 }
