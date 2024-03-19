@@ -1,0 +1,7 @@
+/**
+ * StafMember
+ */
+public class StafMember {
+
+    
+}
