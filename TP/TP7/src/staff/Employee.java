@@ -10,15 +10,16 @@ public class Employee extends StaffMember{
         super(eName, eAddress, ePhone);
         this.socSecNumber = socSecNumber;
         this.payRate = rate;
+        
     }
     
     public String toString() {
         String result = super.toString();
-        result += "\nSocial Security Number: " + socSecNumber;
+        result += "\nNumero de Securite Sociale: " + this.socSecNumber;
         return result;
     }
 
     public double pay() {
-        return payRate;
+        return this.payRate;
     }
 }

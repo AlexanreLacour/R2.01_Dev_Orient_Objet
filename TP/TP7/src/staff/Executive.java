@@ -15,8 +15,8 @@ public class Executive extends Employee{
     }
 
     public double pay() {
-        double payment = super.pay() + bonus;
-        bonus = 0;
+        double payment = super.pay() + this.bonus;
+        this.bonus = 0;
         return payment;
     }
 }

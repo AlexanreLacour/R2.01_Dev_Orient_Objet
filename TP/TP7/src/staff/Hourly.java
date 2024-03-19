@@ -15,14 +15,15 @@ public class Hourly extends Employee{
     }
 
     public double pay() {
-        double payment = payRate * hoursWorked;
-        hoursWorked = 0;
+        double payment;
+        payment = payRate * this.hoursWorked;
+        this.hoursWorked = 0;
         return payment;
     }
 
     public String toString() {
         String result = super.toString();
-        result += "\nCurrent hours: " + hoursWorked;
+        result += "\nHeure(s) de travail : " + this.hoursWorked + "H";
         return result;
     }
 }
