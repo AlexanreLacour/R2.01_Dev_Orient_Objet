@@ -7,6 +7,9 @@ import java.util.ArrayList;
  * The Staff class represents a group of staff members.
  */
 public class Staff {
+    /**
+     * The list of staff members.
+     */
     private ArrayList<StaffMember> staffList;
 
     /**

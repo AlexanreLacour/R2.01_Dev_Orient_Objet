@@ -5,9 +5,17 @@ package staff;
  * It contains basic information such as name, address, and phone number.
  */
 public abstract class StaffMember {
-
+    /**
+     * The name of the staff member.
+     */
     protected String name;
+    /**
+     * The address of the staff member.
+     */
     protected String address;
+    /**
+     * The phone number of the staff member.
+     */
     protected String phone;
 
     /**

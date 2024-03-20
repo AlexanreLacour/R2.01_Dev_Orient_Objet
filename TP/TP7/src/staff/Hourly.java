@@ -7,6 +7,9 @@ package staff;
  * It is a subclass of the Employee class.
  */
 public class Hourly extends Employee {
+    /**
+     * The total number of hours worked by the employee.
+     */
     private int hoursWorked;
 
     /**

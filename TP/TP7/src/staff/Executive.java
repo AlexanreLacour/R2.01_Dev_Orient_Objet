@@ -7,6 +7,9 @@ package staff;
  * It is a subclass of the Employee class.
  */
 public class Executive extends Employee{
+    /**
+     * The bonus amount awarded to the executive employee.
+     */
     private double bonus;
 
     /**

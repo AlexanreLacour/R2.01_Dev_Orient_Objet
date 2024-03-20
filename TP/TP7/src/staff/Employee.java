@@ -5,7 +5,13 @@ package staff;
  * It extends the StaffMember class.
  */
 public class Employee extends StaffMember {
+    /**
+     * The social security number of the employee.
+     */
     protected String socSecNumber;
+    /**
+     * The pay rate of the employee.
+     */
     protected double payRate;
     
     /**

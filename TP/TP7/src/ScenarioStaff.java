@@ -16,6 +16,10 @@ public class ScenarioStaff {
         testStaff();
     }
 
+    /**
+     * The `testStaff` method creates a `Staff` object and adds different types of staff members to it.
+     * It then calls the `payday` method to calculate and display the payments for the staff members.
+     */
     public static void testStaff(){
         System.out.println("#########################");
         System.out.println("Test de la class Staff :");
