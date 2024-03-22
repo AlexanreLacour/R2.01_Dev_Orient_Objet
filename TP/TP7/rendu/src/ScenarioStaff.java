@@ -21,7 +21,6 @@ public class ScenarioStaff {
      * It then calls the `payday` method to calculate and display the payments for the staff members.
      */
     public static void testStaff(){
-        System.out.println(" ");
         System.out.println("#########################");
         System.out.println("Test de la class Staff :");
         System.out.println("#########################");
@@ -31,7 +30,7 @@ public class ScenarioStaff {
         Hourly h1 = new Hourly("Lisa", "21 blv. Panamero Street", "555-1256", "456-789-1234", 50.0);
         h1.addHours(40);
         staff.addNewMember(h1);
-        Hourly h2 = new Hourly("Paul", "21 blv. Panamero Street", "555-1256", "456-789-1234", 75.0);
+        Hourly h2 = new Hourly("Paul", "21 blv. Panamero Street", "555-1256", "456-789-1234", 50.0);
         h2.addHours(40);
         staff.addNewMember(h2);
         Executive e1 = new Executive("Lisa", "21 blv. Panamero Street", "555-1256", "456-789-1234", 1500.0);

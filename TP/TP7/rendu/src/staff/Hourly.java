@@ -58,7 +58,7 @@ public class Hourly extends Employee {
     public String toString() {
         String result = super.toString();
         result += "\nHours worked: " + this.hoursWorked + "H";
-        result += "\nPayment: " + this.pay()+"$";
+        result += "\nSalary: " + this.pay();
         return result;
     }
 }

@@ -59,7 +59,7 @@ public class Staff {
             if(member.pay() == 0.00){
                 System.out.println("Thanks!");
             }else{
-                System.out.println("Payment: " + member.pay() + "$");
+                System.out.println("Payment: $" + member.pay());
             }
             System.out.println("---------------------------------------");
         }
